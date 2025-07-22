@@ -1,0 +1,51 @@
+# Project Configuration File
+
+# Data Settings
+data:
+  raw_data_path: "data/raw/"
+  processed_data_path: "data/processed/"
+  test_size: 0.2
+  validation_size: 0.2
+  random_state: 42
+
+# Data Preprocessing
+preprocessing:
+  handle_missing: "median"  # median, mean, mode, drop
+  outlier_method: "iqr"     # iqr, zscore, isolation_forest, none
+  scaling: "standard"       # standard, minmax, robust, none
+  categorical_encoding: "onehot"  # onehot, label, target
+  
+# Feature Engineering
+features:
+  create_interaction_features: true
+  polynomial_features: false
+  feature_selection: true
+  max_features: 50
+
+# Model Training
+modeling:
+  algorithms:
+    - "logistic_regression"
+    - "random_forest" 
+    - "xgboost"
+    - "lightgbm"
+  cv_folds: 5
+  scoring_metric: "f1"
+  handle_imbalance: "smote"  # smote, undersample, oversample, none
+
+# Model Evaluation
+evaluation:
+  threshold: 0.5
+  primary_metric: "f1_score"
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+
+# Deployment
+deployment:
+  model_format: "joblib"  # joblib, pickle
+  api_host: "0.0.0.0"
+  api_port: 8000

@@ -1,0 +1,20 @@
+# Data and Models
+data/
+models/
+*.csv
+*.pkl
+*.joblib
+
+# Python generated files
+__pycache__/
+*.pyc
+
+# Virtual environment
+churn-env/
+venv/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment files
+.env
