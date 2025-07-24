@@ -1,13 +1,8 @@
-# Data and Models
+# Data and Models (but allow deployment copies)
 data/
 models/
-
 !deployment/api/models/
 !deployment/api/data/
-
-*.csv
-*.pkl
-*.joblib
 
 # Python generated files
 __pycache__/

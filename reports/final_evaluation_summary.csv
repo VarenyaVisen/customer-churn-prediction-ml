@@ -1,0 +1,2 @@
+model_type,roc_auc,accuracy,precision,recall,f1_score,optimal_threshold,annual_net_benefit,customers_to_target
+Logistic Regression,0.8426386628432665,0.7814052519517388,0.8117647058823529,0.18449197860962566,0.3006535947712418,0.1,240860.0,953.0
