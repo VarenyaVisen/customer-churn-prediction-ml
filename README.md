@@ -1,221 +1,88 @@
-# 🛡️ ChurnGuard AI: Customer Retention Intelligence Platform
+# 🔮 Customer Churn Prediction System
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange)
-![API](https://img.shields.io/badge/API-Flask-green)
-![Dashboard](https://img.shields.io/badge/Dashboard-Streamlit-red)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-View%20Dashboard-blue?style=for-the-badge&logo=streamlit)](https://customer-churn-dashboard-hyj1.onrender.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/VarenyaVisen/customer-churn-prediction-ml)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python)](https://python.org)
+[![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange?style=for-the-badge)](https://scikit-learn.org)
 
-## 🎯 Project Overview
+## 📋 Project Overview
 
-**ChurnGuard AI** is a comprehensive machine learning system that predicts customer churn with **84% accuracy** and provides actionable business insights for proactive customer retention. The system transforms reactive customer management into predictive, data-driven strategies.
+A comprehensive machine learning system that predicts customer churn for telecom companies, enabling proactive customer retention strategies. This end-to-end solution includes data preprocessing, model development, evaluation, and deployment with an interactive web dashboard.
 
-### 🏆 Key Achievements
-- **84% ROC AUC** performance on real-world telecom data
-- **$181K+ annual savings** potential with 47x ROI
-- **End-to-end ML pipeline** from data to deployment
-- **Production-ready API** with beautiful business dashboard
-- **Real-time predictions** with business recommendations
+### 🎯 Business Problem
+Customer acquisition costs are 5-25x higher than retention costs, yet many telecom companies lose 15-25% of customers annually. This system identifies at-risk customers before they churn, enabling targeted retention campaigns.
 
----
+### 💰 Business Impact
+- **Model Performance**: 84% ROC AUC score with Logistic Regression
+- **Expected ROI**: $180,000+ annual net benefit through optimized retention campaigns
+- **Customer Coverage**: Identifies 69% of actual churners with 57% precision
+- **Deployment Ready**: Production-optimized threshold and business recommendations
 
-## 🎯 Business Problem
+## 🚀 Live Demo
 
-**Challenge**: Customer acquisition costs 5-25x more than retention, yet many businesses lose 10-15% of customers annually without prediction capabilities.
+**[👉 Try the Interactive Dashboard](https://customer-churn-dashboard-hyj1.onrender.com/)**
 
-**Impact**: 
-- 26.5% annual churn rate
-- $1.4M revenue at risk
-- Reactive customer management
-- No data-driven retention strategies
+Upload customer data or use sample data to see real-time churn predictions with business insights.
 
-**Solution**: AI-powered early warning system to identify at-risk customers and optimize retention investments.
-
----
-
-## 🏗️ System Architecture
+## 🏗️ Project Architecture
 
 ```
-📊 Data Pipeline → 🤖 ML Models → 🔌 REST API → 🌐 Dashboard → 👥 Business Users
+├── 📊 Data Pipeline
+│   ├── Exploratory Data Analysis
+│   ├── Feature Engineering (5 new business features)
+│   └── Comprehensive Preprocessing
+├── 🤖 Machine Learning
+│   ├── 4 Algorithm Comparison (Logistic, RF, XGBoost, LightGBM)
+│   ├── Class Imbalance Handling (SMOTE)
+│   └── Business Threshold Optimization
+├── 📈 Model Evaluation
+│   ├── Comprehensive Performance Analysis
+│   ├── Feature Importance Insights
+│   └── Business Impact Assessment
+└── 🚀 Deployment
+    ├── Interactive Streamlit Dashboard
+    ├── RESTful API (Flask)
+    └── Production-Ready Documentation
 ```
 
-### **Components:**
-1. **Data Processing Pipeline**: Automated cleaning, feature engineering, and preprocessing
-2. **ML Model Engine**: Multiple algorithms with systematic comparison and optimization
-3. **REST API**: Flask-based service for real-time predictions
-4. **Business Dashboard**: Interactive Streamlit interface for business users
-5. **Deployment Infrastructure**: Production-ready containerizable components
+## 📊 Key Results
 
----
+| Metric | Score | Business Interpretation |
+|--------|--------|------------------------|
+| **ROC AUC** | 0.840 | Excellent separation of churners vs non-churners |
+| **Precision** | 0.574 | 57% of predicted churners are actual churners |
+| **Recall** | 0.687 | Catches 69% of actual churners |
+| **F1-Score** | 0.625 | Strong balanced performance |
+| **Optimal Threshold** | 0.35 | Maximizes business value over default 0.5 |
 
-## 📊 Dataset & Features
+## 🔍 Feature Engineering Highlights
 
-**Dataset**: Telecom Customer Churn (IBM Watson Analytics)
-- **Size**: 7,043 customers with 21 original features
-- **Target**: Binary classification (Churn: Yes/No)
-- **Challenge**: 73% class imbalance (No Churn vs Churn)
+Created 5 business-meaningful features that improved model performance:
 
-### **Feature Engineering Pipeline**
-**Original Features (21)** → **Engineered Features (29)** → **ML-Ready Dataset**
+- **Customer Lifetime Value**: Monthly charges × tenure
+- **Services Count**: Total add-on services subscribed
+- **Average Monthly Spend**: Spending behavior analysis
+- **Price Per Service**: Value perception metric
+- **Tenure Groups**: Business-relevant customer segments
 
-**Key Engineered Features:**
-- `Customer_Lifetime_Value`: MonthlyCharges × Tenure
-- `Services_Count`: Number of additional services
-- `Price_Per_Service`: Value perception metric
-- `Avg_Monthly_Spend`: Spending behavior pattern
-- `Tenure_Group`: Business-relevant customer segments
+## 🛠️ Tech Stack
 
-**Preprocessing Steps:**
-- ✅ Data type conversions (TotalCharges: string → numeric)
-- ✅ Missing value imputation with business logic
-- ✅ Categorical encoding (binary, ordinal, one-hot)
-- ✅ Feature scaling (StandardScaler)
-- ✅ Class imbalance handling (SMOTE)
+**Core ML Stack:**
+- **Python 3.8+** - Primary programming language
+- **Pandas & NumPy** - Data manipulation and analysis
+- **Scikit-learn** - Machine learning algorithms and preprocessing
+- **XGBoost & LightGBM** - Advanced gradient boosting models
 
----
+**Deployment & Visualization:**
+- **Streamlit** - Interactive web dashboard
+- **Flask** - RESTful API development
+- **Plotly & Matplotlib** - Data visualization
+- **Render** - Cloud deployment platform
 
-## 🤖 Machine Learning Pipeline
-
-### **Model Development Process**
-1. **Systematic Algorithm Comparison**
-2. **Cross-Validation with Business Metrics**
-3. **Feature Importance Analysis**
-4. **Threshold Optimization for ROI**
-5. **Comprehensive Model Evaluation**
-
-### **Models Tested**
-| Model | ROC AUC | Accuracy | Precision | Recall | F1-Score |
-|-------|---------|----------|-----------|--------|----------|
-| **Logistic Regression** | **0.84** | **0.78** | **0.57** | **0.69** | **0.62** |
-| Random Forest | 0.82 | 0.76 | 0.55 | 0.65 | 0.59 |
-| XGBoost | 0.81 | 0.75 | 0.53 | 0.67 | 0.58 |
-| LightGBM | 0.80 | 0.74 | 0.52 | 0.66 | 0.57 |
-
-**Winner**: **Logistic Regression** 
-- Best overall performance across metrics
-- Excellent interpretability for business stakeholders
-- Fast inference for real-time predictions
-- Robust performance on clean, well-engineered features
-
-### **Why Logistic Regression Won**
-1. **Clean Data Advantage**: Excellent preprocessing enabled linear model to excel
-2. **Feature Engineering**: Manual interaction creation removed need for complex algorithms
-3. **Business Interpretability**: Clear coefficient interpretation for stakeholders
-4. **Production Efficiency**: Fast, reliable predictions with minimal overhead
-
----
-
-## 📈 Model Performance Analysis
-
-### **Confusion Matrix Results**
-```
-                 Predicted
-              No Churn | Churn
-Actual No        844  |  191    (81% Precision for No Churn)
-       Yes       117  |  257    (69% Recall for Churn)
-```
-
-### **Business Metrics**
-- **True Positives (257)**: Correctly identified churners → $185K revenue protection opportunity
-- **False Positives (191)**: Misidentified loyal customers → $3.8K wasted retention cost
-- **False Negatives (117)**: Missed churners → $84K potential lost revenue
-- **Net Business Value**: $181K annual benefit
-
-### **Feature Importance Top 10**
-1. **Contract_encoded** (0.89): Month-to-month vs annual contracts
-2. **tenure** (-0.67): Customer relationship length
-3. **MonthlyCharges** (0.45): Pricing sensitivity
-4. **Customer_Lifetime_Value** (-0.38): Total customer investment
-5. **PaymentMethod_Electronic check** (0.34): Payment friction
-6. **InternetService_Fiber optic** (0.29): Service type risk
-7. **Services_Count** (-0.25): Bundle loyalty effect
-8. **SeniorCitizen** (0.22): Demographic factor
-9. **PaperlessBilling_encoded** (0.18): Digital engagement
-10. **Price_Per_Service** (0.16): Value perception
-
----
-
-## 🚀 Deployment Architecture
-
-### **REST API (Flask)**
-```python
-# Endpoints
-GET  /                    # Health check
-POST /predict            # Single customer prediction
-POST /predict/batch      # Multiple customer analysis
-```
-
-**API Features:**
-- Real-time prediction (< 200ms response)
-- Automatic feature preprocessing
-- Business-friendly JSON responses
-- Error handling and validation
-- Scalable architecture
-
-### **Dashboard (Streamlit)**
-**Pages:**
-1. **Customer Risk Assessment**: Interactive single-customer analysis
-2. **Batch Processing**: Upload and analyze multiple customers
-3. **Model Insights**: Performance metrics and business intelligence
-
-**Features:**
-- Beautiful gradient UI with professional styling
-- Interactive risk gauges and visualizations
-- Real-time API integration
-- Business recommendations engine
-- ROI calculators and impact analysis
-
----
-
-## 💼 Business Impact & ROI
-
-### **Current State Analysis**
-- **Annual Churn**: 1,869 customers (26.5%)
-- **Revenue at Risk**: $1.4M annually
-- **Average Customer Value**: $64/month
-- **Acquisition Cost**: $200 per customer
-
-### **AI System Impact**
-**Retention Effectiveness:**
-- **Customers Identified**: 1,287 (69% recall)
-- **Successful Retention**: 257 customers (20% success rate)
-- **Revenue Protected**: $197K annually
-
-**Cost Analysis:**
-- **Campaign Investment**: $15.6K (448 customers × $35)
-- **Net Annual Benefit**: $181K
-- **Return on Investment**: 1,158%
-
-### **Strategic Value**
-- **Predictive Capability**: 24-48 hour early warning
-- **Targeted Interventions**: 3x more effective than mass campaigns
-- **Resource Optimization**: Focus retention spend on high-value customers
-- **Competitive Advantage**: Data-driven customer strategy
-
----
-
-## 🛠️ Technical Stack
-
-### **Core Technologies**
-- **Python 3.8+**: Primary development language
-- **Pandas & NumPy**: Data manipulation and numerical computing
-- **Scikit-learn**: Machine learning algorithms and preprocessing
-- **Matplotlib & Seaborn**: Statistical visualization
-- **Plotly**: Interactive business dashboards
-
-### **Deployment Stack**
-- **Flask**: REST API framework
-- **Streamlit**: Interactive web dashboard
-- **Joblib**: Model serialization and deployment
-- **Requests**: API client integration
-
-### **Development Tools**
-- **Jupyter Notebooks**: Exploratory analysis and model development
-- **Git**: Version control and collaboration
-- **YAML**: Configuration management
-- **Markdown**: Documentation and reporting
-
----
+**Development Tools:**
+- **Jupyter Notebooks** - Development and analysis
+- **Git & GitHub** - Version control
+- **YAML** - Configuration management
 
 ## 📁 Project Structure
 
@@ -223,197 +90,137 @@ POST /predict/batch      # Multiple customer analysis
 customer-churn-prediction-ml/
 ├── 📊 data/
 │   ├── raw/                    # Original dataset
-│   └── processed/              # Clean, ML-ready data
+│   └── processed/              # Cleaned, ML-ready data
 ├── 📓 notebooks/
-│   ├── 01_data_exploration.ipynb      # EDA and insights
-│   ├── 02_data_preprocessing.ipynb    # Feature engineering
-│   ├── 03_model_development.ipynb     # Algorithm comparison
-│   └── 04_model_evaluation.ipynb     # Performance analysis
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_model_development.ipynb
+│   └── 04_model_evaluation.ipynb
 ├── 🤖 models/
 │   └── best_model_logistic_regression.joblib
-├── 📊 reports/
-│   ├── business_insights.md           # Business analysis
-│   ├── model_comparison.csv           # Performance metrics
-│   └── feature_importance.csv         # Feature analysis
+├── 📈 reports/
+│   ├── model_comparison.csv
+│   ├── feature_importance.csv
+│   └── final_evaluation_summary.csv
 ├── 🚀 deployment/
-│   ├── api/
-│   │   ├── app.py                     # Flask REST API
-│   │   ├── requirements.txt           # API dependencies
-│   │   └── test_api.py               # API testing
-│   └── dashboard/
-│       └── streamlit_app.py          # Business dashboard
-└── 🔧 src/
-    ├── data_preprocessing.py          # Reusable preprocessing
-    ├── feature_engineering.py         # Feature creation
-    ├── model_training.py             # Training pipeline
-    └── model_evaluation.py           # Evaluation metrics
+│   ├── api/                    # Flask REST API
+│   └── dashboard/              # Streamlit dashboard
+└── 📝 Documentation
 ```
 
----
+## 🚀 Quick Start
 
-## 🚀 Quick Start Guide
+### Local Setup
 
-### **Prerequisites**
+1. **Clone the repository**
 ```bash
-Python 3.8+
-Git
-Virtual environment (recommended)
-```
-
-### **Installation**
-```bash
-# 1. Clone repository
-git clone https://github.com/yourusername/customer-churn-prediction-ml.git
+git clone https://github.com/VarenyaVisen/customer-churn-prediction-ml.git
 cd customer-churn-prediction-ml
+```
 
-# 2. Create virtual environment
+2. **Create virtual environment**
+```bash
 python -m venv churn-env
-source churn-env/bin/activate  # Linux/Mac
-churn-env\Scripts\activate     # Windows
+source churn-env/bin/activate  # On Windows: churn-env\Scripts\activate
+```
 
-# 3. Install dependencies
+3. **Install dependencies**
+```bash
 pip install -r requirements.txt
 ```
 
-### **Run Analysis**
+4. **Run Jupyter notebooks**
 ```bash
-# Explore the complete pipeline
-jupyter notebook notebooks/01_data_exploration.ipynb
+jupyter notebook notebooks/
 ```
 
-### **Deploy System**
+5. **Launch dashboard locally**
 ```bash
-# Terminal 1: Start API
-cd deployment/api
-python app.py
-
-# Terminal 2: Start Dashboard
-cd deployment/dashboard
-streamlit run streamlit_app.py
+streamlit run deployment/dashboard/streamlit_app.py
 ```
 
-### **Test Predictions**
-```bash
-# Test API functionality
-cd deployment/api
-python test_api.py
-```
+### API Usage
 
----
-
-## 📊 Usage Examples
-
-### **API Integration**
+**Predict single customer:**
 ```python
 import requests
 
-# Predict single customer
 customer_data = {
     "tenure": 12,
     "MonthlyCharges": 85.5,
-    "Contract_encoded": 0,  # Month-to-month
-    "Services_Count": 3
+    "TotalCharges": 1000.0,
+    # ... other features
 }
 
 response = requests.post("http://localhost:5000/predict", json=customer_data)
-result = response.json()
-
-print(f"Churn Risk: {result['churn_probability']:.1%}")
-print(f"Recommendation: {result['recommendation']}")
+prediction = response.json()
+print(f"Churn Probability: {prediction['churn_probability']}")
 ```
 
-### **Dashboard Features**
-- **Risk Assessment**: Interactive customer analysis with real-time predictions
-- **Business Intelligence**: ROI calculators and impact analysis
-- **Batch Processing**: Upload CSV files for multiple customer analysis
-- **Model Insights**: Performance metrics and feature importance
+## 📊 Model Performance Deep Dive
 
----
+### Algorithm Comparison
+| Model | ROC AUC | CV Score | Training Time | Interpretability |
+|-------|---------|----------|---------------|------------------|
+| **Logistic Regression** ⭐ | 0.840 | 0.831 ± 0.012 | Fast | High |
+| Random Forest | 0.835 | 0.825 ± 0.015 | Medium | Medium |
+| XGBoost | 0.832 | 0.823 ± 0.018 | Slow | Low |
+| LightGBM | 0.829 | 0.820 ± 0.016 | Fast | Low |
 
-## 📈 Model Validation & Testing
+### Feature Importance (Top 5)
+1. **Contract_encoded** - Contract type (month-to-month highest risk)
+2. **tenure** - Customer relationship length
+3. **TotalCharges** - Historical spending
+4. **MonthlyCharges** - Current monthly payment
+5. **Customer_Lifetime_Value** - Engineered business metric
 
-### **Validation Strategy**
-- **Train-Test Split**: 80/20 with stratified sampling
-- **Cross-Validation**: 5-fold CV for robust performance estimation
-- **Threshold Optimization**: Business-cost-aware threshold selection
-- **Feature Stability**: Importance analysis across CV folds
+## 💼 Business Insights
 
-### **Performance Monitoring**
-- **Model Drift Detection**: Monthly performance tracking
-- **Data Quality Monitoring**: Automated validation pipelines
-- **Business Metric Tracking**: ROI and retention rate monitoring
-- **A/B Testing Framework**: Campaign effectiveness measurement
+### Key Churn Drivers
+- **Contract Type**: Month-to-month customers 3x more likely to churn
+- **Customer Age**: New customers (0-12 months) represent 67% of churn risk
+- **Service Adoption**: Customers with fewer services show higher churn rates
+- **Payment Method**: Electronic check users show elevated churn risk
 
-### **Production Readiness**
-- ✅ Model versioning and rollback capabilities
-- ✅ API rate limiting and error handling
-- ✅ Automated testing and validation
-- ✅ Documentation and monitoring
+### Retention Recommendations
+1. **Target month-to-month contract customers** with annual contract incentives
+2. **Implement new customer onboarding** programs for first 12 months
+3. **Cross-sell additional services** to increase switching costs
+4. **Optimize payment experience** for electronic check users
 
----
+## 🎯 Future Enhancements
 
-## 🔄 Future Enhancements
-
-### **Technical Improvements**
-- **Advanced Models**: Deep learning and ensemble methods
-- **Real-time Features**: Streaming data integration
-- **AutoML Pipeline**: Automated model selection and tuning
-- **A/B Testing**: Built-in experimentation framework
-
-### **Business Features**
-- **Customer Segmentation**: Advanced clustering analysis
-- **Lifetime Value Prediction**: Revenue forecasting
-- **Competitive Intelligence**: External data integration
-- **Multi-channel Analytics**: Cross-platform customer tracking
-
-### **Infrastructure Scaling**
-- **Containerization**: Docker deployment
-- **Cloud Integration**: AWS/GCP/Azure deployment
-- **Microservices**: Scalable architecture
-- **Real-time Monitoring**: Production observability
-
----
+- [ ] Real-time model retraining pipeline
+- [ ] A/B testing framework for retention campaigns
+- [ ] Advanced feature engineering with temporal patterns
+- [ ] Multi-model ensemble for improved performance
+- [ ] Customer segmentation analysis
+- [ ] Automated model monitoring and drift detection
 
 ## 🤝 Contributing
 
-This is a portfolio project, but feedback and suggestions are welcome!
+This project is part of my data science portfolio. Feedback and suggestions are welcome!
 
-### **Development Process**
 1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
----
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit changes (`git commit -am 'Add improvement'`)
+4. Push to branch (`git push origin feature/improvement`)
+5. Open a Pull Request
 
 ## 📄 License
 
 This project is for educational and portfolio purposes.
 
----
+## 👤 Author
 
-
-## 🙏 Acknowledgments
-
-- **Dataset**: IBM Watson Analytics Telco Customer Churn
-- **Inspiration**: Real-world customer retention challenges
-- **Community**: Open-source ML and data science community
-- **Tools**: Scikit-learn, Streamlit, Flask, and Python ecosystem
+**Varenya Visen**
+- 🌐 **Live Demo**: [Churn Prediction Dashboard](https://customer-churn-dashboard-hyj1.onrender.com/)
+- 💼 **GitHub**: [@VarenyaVisen](https://github.com/VarenyaVisen)
+- 📧 **Email**: [varenyavisen@gmail.com]
+- 💼 **LinkedIn**: [Varenya Visen](https://www.linkedin.com/in/varenya-visen-a2680b265/)
 
 ---
 
-## 📊 Project Metrics
-
-- **Development Time**: 3-4 weeks
-- **Lines of Code**: 2,500+
-- **Documentation**: 5,000+ words
-- **Model Accuracy**: 84% ROC AUC
-- **Business Impact**: $181K+ annual value
-- **Deployment**: Production-ready with API and dashboard
-
----
+⭐ **Star this repository if you found it helpful!**
 
 *Built with ❤️ for solving real business problems through machine learning*
-
-**⭐ If this project helped you, please give it a star!**
