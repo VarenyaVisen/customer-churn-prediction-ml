@@ -1,6 +1,10 @@
 # Data and Models
 data/
 models/
+
+!deployment/api/models/
+!deployment/api/data/
+
 *.csv
 *.pkl
 *.joblib

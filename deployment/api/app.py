@@ -9,7 +9,7 @@ import os
 app = Flask(__name__)
 
 # Load the trained model (adjust path as needed)
-model_path = '../../models/best_model_logistic_regression.joblib'
+model_path = 'models/best_model_logistic_regression.joblib'
 try:
     model = joblib.load(model_path)
     print("✅ Model loaded successfully")
@@ -26,7 +26,7 @@ def get_expected_features():
             return model.feature_names_in_.tolist()
         
         # Fallback: get from processed data
-        df = pd.read_csv('../../data/processed/telco_churn_final_processed.csv')
+        df = pd.read_csv('data/processed/telco_churn_final_processed.csv')
         return [col for col in df.columns if col != 'Churn_binary']
     except Exception as e:
         print(f"Error getting features: {e}")
