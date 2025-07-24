@@ -75,7 +75,7 @@ st.sidebar.markdown("### 🎛️ Navigation")
 page = st.sidebar.selectbox("Choose a page", ["🎯 Single Prediction", "📊 Batch Analysis", "🧠 Model Insights"])
 
 # API endpoint
-API_URL = "http://localhost:5000"
+API_URL = "https://customer-churn-prediction-ml-giyk.onrender.com"
 
 def make_prediction(customer_data):
     """Make prediction via API"""
