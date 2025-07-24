@@ -8,7 +8,7 @@ import os
 # Initialize Flask app
 app = Flask(__name__)
 
-# Load the trained model (adjust path as needed)
+# Load the trained model (FIXED PATH)
 model_path = 'models/best_model_logistic_regression.joblib'
 try:
     model = joblib.load(model_path)
@@ -25,7 +25,7 @@ def get_expected_features():
         if hasattr(model, 'feature_names_in_'):
             return model.feature_names_in_.tolist()
         
-        # Fallback: get from processed data
+        # Fallback: get from processed data (FIXED PATH)
         df = pd.read_csv('data/processed/telco_churn_final_processed.csv')
         return [col for col in df.columns if col != 'Churn_binary']
     except Exception as e:
