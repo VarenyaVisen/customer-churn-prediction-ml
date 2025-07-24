@@ -98,12 +98,44 @@ def check_api_health():
         return False
 
 # Check API status
-api_status = check_api_health()
-if not api_status:
-    st.sidebar.error("🔴 API Offline")
-    st.error("⚠️ **API Connection Failed!** Please start the API first:")
-    st.code("cd deployment/api && python app.py", language="bash")
-    st.stop()
+def check_api_status():
+    """Check if API is running with better error handling"""
+    try:
+        response = requests.get(f"{API_URL}/health", timeout=10)  # Try health endpoint first
+        return response.status_code == 200
+    except:
+        try:
+            # Fallback to main endpoint
+            response = requests.get(API_URL, timeout=10)
+            return response.status_code == 200
+        except:
+            return False
+
+# Replace your current API check with this:
+if not check_api_status():
+    st.sidebar.error("🔴 API Starting...")
+    
+    # Instead of stopping completely, show a nice waiting screen
+    st.markdown("""
+    <div style="text-align: center; padding: 3rem;">
+        <h2>🚀 API is Starting Up...</h2>
+        <p>Please wait 30-60 seconds while our API wakes up on Render.</p>
+        <p>This page will refresh automatically.</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Show progress bar
+    progress_bar = st.progress(0)
+    status_text = st.empty()
+    
+    for i in range(15):  # 15 iterations of 2 seconds = 30 seconds
+        progress_bar.progress((i + 1) * 6.67)  # Progress to ~100%
+        status_text.text(f'Waking up API... {i*2} seconds')
+        time.sleep(2)
+    
+    # Auto refresh the page
+    st.rerun()
+    st.stop()  # Stop here but will restart due to rerun
 else:
     st.sidebar.success("🟢 API Online")
 
