@@ -374,8 +374,11 @@ elif page == "🧠 Model Insights":
                      text="Score")
         
         fig.update_traces(texttemplate='%{text:.3f}', textposition='outside')
-        fig.update_layout(height=400, showlegend=False)
-        fig.update_yaxis(range=[0, 1])
+        fig.update_layout(
+            height=400,
+            showlegend=False,
+            yaxis=dict(range=[0, 1])
+        )
         st.plotly_chart(fig, use_container_width=True)
         
         # Model status
