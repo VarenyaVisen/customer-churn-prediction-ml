@@ -18,6 +18,44 @@ Customer acquisition costs are 5-25x higher than retention costs, yet many telec
 - **Customer Coverage**: Identifies 69% of actual churners with 57% precision
 - **Deployment Ready**: Production-optimized threshold and business recommendations
 
+## 📋 Important Note: Model Behavior, UI Simplification & Future Enhancements
+
+### ⚠️ Current Model Behavior
+The model currently tends to **predict high churn risk for nearly every input**. This is primarily because **not all 29 features required by the model are provided at inference time** through the dashboard.
+
+- Many important features are **left out to keep the UI user-friendly**.
+- As a result, the model receives **incomplete customer profiles**, which it interprets as high risk.
+- This is an expected limitation and will be addressed in future iterations.
+
+---
+
+### ✅ Current Implementation
+The Streamlit dashboard is intentionally designed with a **streamlined feature input interface**, collecting only **15–18 of the most critical customer attributes**. This trade-off is intentional and aligns with the goals of **early usability and real-world deployment**.
+
+---
+
+### 💡 Why This Approach?
+
+- **User Experience First**: Requiring input for all 29 features would clutter the UI and reduce usability, especially for non-technical business stakeholders.
+- **MVP Strategy**: Prioritizes the most predictive features to **achieve meaningful results** without overwhelming users.
+- **Real-World Constraints**: Business users often lack access to detailed internal service data, but have access to high-level information like billing and contract type.
+
+---
+
+### 🧾 Current Feature Coverage
+The dashboard captures:
+- **Demographics**: Senior citizen, partner/dependent status  
+- **Account Info**: Tenure, monthly/total charges, contract type  
+- **Key Services**: Internet service, phone service, major add-ons  
+- **Billing & Payment**: Paperless billing, payment method
+
+Missing features are replaced using **business-informed intelligent defaults** rather than zeros, preserving model integrity as much as possible.
+
+---
+
+> 📌 **Next Steps**: Future versions will address this by either (a) gradually including more features or (b) retraining the model to work effectively with a reduced, practical feature set.
+
+
 ## 🚀 Live Demo
 
 **[👉 Try the Interactive Dashboard](https://customer-churn-dashboard-hyj1.onrender.com/)**
